@@ -235,7 +235,7 @@ module CrowdFavorite::Tasks::WordPress
               [internal] Ensure the release path has an updated modified time for deploy:cleanup
       DESC
       task :touch_release, :except => { :no_release => true } do
-        run "touch '#{release_path}'"
+        try_sudo "touch '#{release_path}'"
       end
     end
 
